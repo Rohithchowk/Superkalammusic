@@ -1,17 +1,18 @@
-// src/context/SongContext.js
 'use client'
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
-const SongContext = createContext({
-  currentSong: "kalki.mp3",
-  
-});
+// Define the shape of the context value
+interface SongContextType {
+  currentSong: string;
+  setCurrentSong: (song: string) => void;
+}
 
+// Create the context with a default value
+const SongContext = createContext<SongContextType | undefined>(undefined);
 
-export  const useSong = () => useContext(SongContext);
-
-export const SongProvider = ({ children }) => {
-  const [currentSong, setCurrentSong] = useState("kalki.mp3");
+// Create a provider component
+export const SongProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [currentSong, setCurrentSong] = useState<string>('');
 
   return (
     <SongContext.Provider value={{ currentSong, setCurrentSong }}>
@@ -20,3 +21,11 @@ export const SongProvider = ({ children }) => {
   );
 };
 
+// Create a custom hook to use the context
+export const useSong = () => {
+  const context = useContext(SongContext);
+  if (!context) {
+    throw new Error('useSong must be used within a SongProvider');
+  }
+  return context;
+};
