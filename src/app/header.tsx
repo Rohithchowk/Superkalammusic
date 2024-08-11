@@ -33,7 +33,7 @@ export default function Header() {
 
   
 
-  const handleButtonClick = (song) => {
+  const handleButtonClick = (song:string) => {
     setCurrentSong(song);
     console.log(song)
   };
