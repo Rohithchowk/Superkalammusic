@@ -165,6 +165,9 @@ useEffect(() => {
         <button  className="p-2 md:p-1 bg-transparent hover:bg-[#E90074] rounded-full mr-2">
           <TiArrowLoop size={20} className="text-white" />
         </button>
+        <h1 className=" text-green-500 bg-transparent border-2 border-green-500 rounded-full p-1 mr-2 ">
+  {currentSong}
+</h1>
       </div>
         <input
           type="range"

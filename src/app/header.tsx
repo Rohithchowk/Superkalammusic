@@ -31,7 +31,7 @@ export default function Header() {
   const songs=Songs();
   const { setCurrentSong } = useSong();
 
-  const playSong = (songUrl) => {
+  const playSong = (songUrl:string) => {
     if (audioRef.current) {
       audioRef.current.src = songUrl;
       audioRef.current.play();
