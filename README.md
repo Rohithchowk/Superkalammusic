@@ -1,5 +1,6 @@
 <h1><a href ="https://superkalammusic.vercel.app/" >View Live Website  </a></h1>
 <span>
+<h1>To play Songs in Website , Go to Recently Played /My Playlsit at the top right corner </h1>
 <img src="https://github.com/Rohithchowk/Superkalammusic/blob/master/Screenshot%20(437).png?raw=true"/>
 
 <h2>for more images , look at the screenshots in github repo</h2>
